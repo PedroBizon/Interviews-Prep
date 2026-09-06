@@ -2,39 +2,38 @@
 
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
-        i = 0
-
         if len(str1) > len(str2):
-            shorter = str2
             longer = str1
+            shorter = str2
         else:
-            shorter = str1
-            longer = str2
+            longer = str1
+            shorter = str2
 
-        while i < len(shorter):
-            candidate = shorter[:i]
+        candidate = [] 
+        gcd = "" # Greatest common divisor
 
-            if self.dividesBoth(candidate, shorter, longer):
-                ans = candidate
+        for i in range(len(shorter)):
+            candidate.append(shorter[i])
 
-        return ans
+            if(self.divides(candidate, shorter) and self.divides(candidate, longer)):
+                gcd = "".join(candidate)
 
-    def dividesBoth(self, candidate, shorter, longer):
-        if self.divides(candidate, shorter) and self.divides(candidate, longer):
+        return gcd
+
+
+    def divides(self, candidate:list, word:str):
+        if (len(word) % len(candidate) != 0 ):
+            return False
+        
+        c = candidate
+
+        for i in range(len(word)//len(candidate)):
+            c.append(candidate)
+
+        c= "".join(c)
+
+        if (c == word):
             return True
 
-    def divides(self, candidate, word):
-        original_candidate = candidate
-
-        while len(candidate) <= len(word):
-            if candidate == word:
-                return True
-            else:
-                candidate += original_candidate
-
-        return False
-
-        
-
-        
+        return False             
             
