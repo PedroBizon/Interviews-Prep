@@ -9,30 +9,41 @@ class Solution:
             longer = str1
             shorter = str2
 
-        candidate = [] 
-        gcd = "" # Greatest common divisor
+        candidate = []
 
         for i in range(len(shorter)):
             candidate.append(shorter[i])
 
+             
+        if(self.divides(candidate, shorter) and self.divides(candidate, longer)):
+                gcd = "".join(candidate)
+                return gcd
+
+        for i in range(len(shorter)-1):
+            candidate.pop(-1)
+
             if(self.divides(candidate, shorter) and self.divides(candidate, longer)):
                 gcd = "".join(candidate)
 
-        return gcd
+                return gcd
+
+        return ""
+    
 
 
     def divides(self, candidate:list, word:str):
-        if (len(word) % len(candidate) != 0 ):
+        if (len(word) % len(candidate) != 0):
             return False
         
-        c = candidate
+        c = []
 
         for i in range(len(word)//len(candidate)):
-            c.append(candidate)
+            for j in range(len(candidate)):
+                c.append(candidate[j])
 
-        c= "".join(c)
+        c_str = "".join(c)
 
-        if (c == word):
+        if (c_str == word):
             return True
 
         return False             
