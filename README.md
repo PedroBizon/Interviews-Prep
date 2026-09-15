@@ -16,9 +16,12 @@ Build genuine fluency in core DSA topics so I can:
 - Recognize patterns quickly (two pointers, sliding window, DFS/BFS, DP, etc.)
 - Analyze time and space complexity correctly
 
-## Topics Covered
+## Topics Covered trough exercises
 
 - [x] Arrays & Strings
+
+## Books Covered:
+- [ ] Understanding Algorithms (In progress)
 
 
 ## 🛠 How I'm Practicing
