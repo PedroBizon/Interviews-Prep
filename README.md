@@ -19,6 +19,7 @@ Build genuine fluency in core DSA topics so I can:
 ## Topics Covered trough exercises
 
 - [x] Arrays & Strings
+- [x] Two Pointers
 
 ## Books Covered:
 - [ ] Understanding Algorithms (In progress)
